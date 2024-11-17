@@ -1,23 +1,29 @@
 //inputan buat user
 const { DataTypes } = require('sequelize');
-const sequelize = require('../config/dbConfig');
+const sequelize = require('../config/sqlConfig');
 
 const User = sequelize.define('User', {
     id: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.INTEGER(50),
         primaryKey: true,
         autoIncrement: true
+        
     },
     username: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: false
+
     },
-    is_vip: {
-        type: DataTypes.BOOLEAN,
-        defaultValue: false
+    email   : {
+        type: DataTypes.STRING(50),
+        defaultValue: false,
+        unique: true, 
+        validate: {
+            isEmail: true,
+        }
     }
 }, {
-    timestamps: false
+    tableName : user,
 });
 
 module.exports = User;
