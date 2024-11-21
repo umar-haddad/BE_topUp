@@ -1,6 +1,6 @@
 //masuk dengan ID dan Username dan email yang terdaftar Untuk sementara
 
-const User = require('../models/users');
+const User = require('../models/user');
 
 exports.createUser = async (req, res) => {
     try {
