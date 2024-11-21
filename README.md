@@ -10,4 +10,7 @@
 - JWT = membuat dan memverifikasi JSON Web Tokens (JWT).
 - Multer =  menangani file upload di Node.js, terutama untuk menangani data multipart/form-data (misalnya, upload gambar atau file lain dari client ke server).
 
-##
+## Validation 
+### User
+- CRUD User = username, email, Id
+- validation actived username, email
