@@ -1,5 +1,5 @@
 //memasukkan data ke database
-const { body, validationResult } = require('express-validator');
+const { body, validationResult } = require('express-validator')
 
 const validateUserInput = [
     body('username').isString().isLength({ min: 3 }),

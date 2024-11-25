@@ -5,6 +5,7 @@ dotenv.config();
 
 const userRoutes = require('./routes/user');
 const itemRoutes = require('./routes/items');
+const { validateUserInput } = require('./middlewares/inputValidation');
 
 const app = express();
 app.use(bodyParser.json());
