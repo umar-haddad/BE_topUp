@@ -6,5 +6,6 @@ const { validateUserInput } = require('../middlewares/inputValidation');
 
 router.post('/create', validateUserInput, userController.createUser);
 router.get('/:id', userController.getUserById);
+router.put('/update', userController.updateUser);
 
 module.exports = router;

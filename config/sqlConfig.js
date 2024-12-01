@@ -6,20 +6,19 @@ require('dotenv').config();
 
 // Membaca konfigurasi database dari .env
 const sequelize = new Sequelize(
-    process.env.DB_NAME, // Pastikan ini nama variabel yang benar
-    process.env.DB_USER,
-    process.env.DB_PASSWORD,
     {
+        username: process.env.DB_USER,
+        database: process.env.DB_NAME,
         host: process.env.DB_HOST,
-        dialect: 'mysql', 
-        logging: false, 
-    }
-   
+        dialect: 'mysql',
+        port: process.env.port
+        },
 );
 
 console.log('Database:', process.env.DB_NAME),
 console.log('User:', process.env.DB_USER),
-console.log('Host:', process.env.DB_HOST)
+console.log('Host:', process.env.DB_HOST),
+
 
 sequelize.authenticate()
     .then(() => console.log('Database connected'))
